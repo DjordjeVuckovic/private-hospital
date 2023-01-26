@@ -1,0 +1,36 @@
+.background-image{
+  background-image: url("../assets/image.jpg");
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.window{
+  display: flex;
+  justify-content: space-around;
+
+}
+.forms{
+  text-align: center;
+  width: 100%;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  height: 100%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  display: flex;
+  justify-content: center;
+  margin-right: 5%;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 5px;
+}
+.taber{
+  width: 100%;
+  display: flex;
+}
+.slika{
+  text-align: center;
+  width: 100%;
+  align-items: center;
+}
