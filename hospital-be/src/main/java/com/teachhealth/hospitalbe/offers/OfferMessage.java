@@ -4,8 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity(name = "BloodContract")
-@Table(name = "blood_contract")
+@Entity(name = "OfferMessage")
+@Table(name = "offer_message")
 @Getter
 @Setter
 @NoArgsConstructor
