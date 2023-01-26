@@ -14,19 +14,27 @@ import javax.annotation.PostConstruct;
 public class MessagingConfig {
     @Value("${QUEUE}")
     public  String QUEUE;
+    @Value("${QUEUE_HOSPITAL_1}")
+    public  String QUEUE1;
     @Value("${EXCHANGE}")
     public   String EXCHANGE ;
     @Value("${ROUTING_KEY}")
     public   String ROUTING_KEY;
+    @Value("${ROUTING_KEY_HOSPITAL_1}")
+    public   String ROUTING_KEY1;
     public static String QUEUE_STATIC;
+    public static String QUEUE_STATIC1;
     public static String EXCHANGE_STATIC;
     public static String ROUTING_KEY_STATIC;
+    public static String ROUTING_KEY_STATIC1;
 
     @PostConstruct
     public void init(){
         QUEUE_STATIC = QUEUE;
+        QUEUE_STATIC1 = QUEUE1;
         EXCHANGE_STATIC = EXCHANGE;
         ROUTING_KEY_STATIC = ROUTING_KEY;
+        ROUTING_KEY_STATIC1 = ROUTING_KEY1;
     }
 
     @Bean
@@ -34,12 +42,20 @@ public class MessagingConfig {
         return new Queue(QUEUE_STATIC);
     }
     @Bean
+    public Queue queue1(){
+        return new Queue(QUEUE_STATIC);
+    }
+    @Bean
     public TopicExchange exchange(){
         return new TopicExchange(EXCHANGE_STATIC);
     }
     @Bean
-    public Binding binding(Queue queue, TopicExchange exchange){
-        return BindingBuilder.bind(queue).to(exchange).with(ROUTING_KEY_STATIC);
+    public Binding binding(TopicExchange exchange){
+        return BindingBuilder.bind(queue()).to(exchange).with(ROUTING_KEY_STATIC);
+    }
+    @Bean
+    public Binding binding1(TopicExchange exchange){
+        return BindingBuilder.bind(queue1()).to(exchange).with(ROUTING_KEY_STATIC);
     }
     @Bean
     public MessageConverter converter(){

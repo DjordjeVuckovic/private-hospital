@@ -1,4 +1,5 @@
 package com.teachhealth.hospitalbe.bloodManagment;
+
 import com.teachhealth.hospitalbe.common.MessagingConfig;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
