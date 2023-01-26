@@ -28,7 +28,7 @@ public class BloodContractService {
                 .isExpired(false)
                 .bloodUnits(newBloodUnits)
                 .build();
-        rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE_STATIC, MessagingConfig.QUEUE_STATIC, newContract.getHospitalName());
+        rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE_STATIC, MessagingConfig.QUEUE_STATIC, contractDto);
         bloodContractRepository.save(newContract);
     }
 }
