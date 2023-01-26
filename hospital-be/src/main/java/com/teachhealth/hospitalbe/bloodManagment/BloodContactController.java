@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 public class BloodContactController {
     private final BloodContractService bloodContractService;
     @PostMapping()
-    public ResponseEntity<?> createCenter(@RequestBody BloodContractDto contractDto){
+    public ResponseEntity<?> createContract(@RequestBody BloodContractDto contractDto){
         bloodContractService.createContract(contractDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
