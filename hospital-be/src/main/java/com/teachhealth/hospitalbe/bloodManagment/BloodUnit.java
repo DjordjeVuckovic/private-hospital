@@ -1,7 +1,7 @@
 package com.teachhealth.hospitalbe.bloodManagment;
-
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Entity(name = "BloodUnit")
 @Table(name = "blood_unit")
