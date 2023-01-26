@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -15,6 +16,6 @@ import java.util.List;
 public class BloodContractDto {
     private List<BloodUnitDto> bloodUnits;
     private Integer price;
-    private LocalDateTime deliveryDate;
+    private Date deliveryDate;
     private String hospitalName;
 }

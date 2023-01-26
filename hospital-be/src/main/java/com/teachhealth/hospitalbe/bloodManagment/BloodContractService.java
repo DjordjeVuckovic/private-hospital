@@ -1,5 +1,7 @@
 package com.teachhealth.hospitalbe.bloodManagment;
+import com.teachhealth.hospitalbe.common.MessagingConfig;
 import lombok.RequiredArgsConstructor;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -9,6 +11,7 @@ import javax.transaction.Transactional;
 public class BloodContractService {
     private final BloodContractRepository bloodContractRepository;
     private final BloodUnitRepository bloodUnitRepository;
+    private final RabbitTemplate rabbitTemplate;
     @Transactional
     public void createContract(BloodContractDto contractDto){
         var contract = bloodContractRepository
@@ -25,6 +28,7 @@ public class BloodContractService {
                 .isExpired(false)
                 .bloodUnits(newBloodUnits)
                 .build();
+        rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE_STATIC, MessagingConfig.QUEUE_STATIC, newContract.getHospitalName());
         bloodContractRepository.save(newContract);
     }
 }

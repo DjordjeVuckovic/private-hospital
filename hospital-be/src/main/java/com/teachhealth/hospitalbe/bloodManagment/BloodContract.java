@@ -3,6 +3,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Entity(name = "BloodContract")
@@ -20,7 +21,7 @@ public class BloodContract {
     @ManyToMany
     private List<BloodUnit> bloodUnits;
     private Integer price;
-    private LocalDateTime deliveryDate;
+    private Date deliveryDate;
     private Boolean isExpired = false;
     private String hospitalName;
 }
