@@ -15,6 +15,11 @@ public class BloodUnit {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
+    @Enumerated(EnumType.STRING)
     private BloodType bloodType;
     private Integer bloodAmount;
+    public BloodUnit(BloodType bloodType, Integer bloodAmount) {
+        this.bloodType = bloodType;
+        this.bloodAmount = bloodAmount;
+    }
 }

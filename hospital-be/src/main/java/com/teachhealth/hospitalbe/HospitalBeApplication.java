@@ -8,9 +8,7 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 
 @SpringBootApplication
 @EnableTransactionManagement
-@EnableWebMvc
 public class HospitalBeApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(HospitalBeApplication.class, args);
     }

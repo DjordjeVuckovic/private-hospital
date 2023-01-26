@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BloodContractDto {
-    private List<BloodUnit> bloodUnits;
+    private List<BloodUnitDto> bloodUnits;
     private Integer price;
     private LocalDateTime deliveryDate;
     private String hospitalName;
