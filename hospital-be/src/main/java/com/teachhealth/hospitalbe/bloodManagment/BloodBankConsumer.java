@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 @Component
 @RequiredArgsConstructor
 public class BloodBankConsumer {
@@ -17,7 +19,10 @@ public class BloodBankConsumer {
     @RabbitListener(queues="${QUEUE_HOSPITAL_1}")
     public void handler(String message) {
         log.info("Consumer> " + message);
-        var off = OfferMessage.builder().message(message).build();
+        var off = OfferMessage.builder()
+                .message(message)
+                .receivedTime(new Date())
+                .build();
         offerMessageRepository.save(off);
     }
 }

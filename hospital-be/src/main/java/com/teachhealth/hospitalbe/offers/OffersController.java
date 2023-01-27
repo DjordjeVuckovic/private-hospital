@@ -15,6 +15,6 @@ public class OffersController {
     private final OfferMessageRepository offerMessageRepository;
     @GetMapping
     public ResponseEntity<List<OfferMessage>> getAllMessages(){
-        return ResponseEntity.ok(offerMessageRepository.findAll());
+        return ResponseEntity.ok(offerMessageRepository.GetOffers());
     }
 }

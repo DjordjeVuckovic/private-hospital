@@ -1,0 +1,49 @@
+.window{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+.title{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: #3b4d79;
+}
+.cards{
+  margin-left: 2%;
+  grid-column: auto;
+  margin-top: 5px;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: flex-start;
+}
+.card{
+  border-radius: 10px;
+  border-style: none;
+  background-color: #282a36;
+  color: #DCD6CC;
+  text-align: center;
+  font-size: 25px;
+  letter-spacing: 2px;
+  padding: 20px;
+  text-wrap: normal;
+}
+.card:hover{
+  transform: scale(1.12);
+  transition: 0.2s;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+  cursor: cell;
+}
+.header{
+  font-size: 20px;
+  font-family: 'Grotesque', sans-serif;
+}
+.point{
+  margin-top: 1%;
+  padding: 5px;
+  text-wrap: normal;
+}

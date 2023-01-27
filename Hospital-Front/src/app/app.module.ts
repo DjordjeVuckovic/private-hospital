@@ -13,33 +13,43 @@ import {MatSelectModule} from "@angular/material/select";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from '@angular/material/core';
-import { WindowComponent } from './view/window/window.component';
 import {MatExpansionModule} from "@angular/material/expansion";
 import { ContractCardComponent } from './components/contract-card/contract-card.component';
+import {WindowComponent} from "./View/window/window.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import { OffersComponent } from './View/offers/offers.component';
+import { LoginComponent } from './View/login/login.component';
+import {MatDividerModule} from "@angular/material/divider";
+import {NgToastModule} from "ng-angular-popup";
 
 @NgModule({
   declarations: [
     AppComponent,
+    ContractCardComponent,
     WindowComponent,
-    ContractCardComponent
+    OffersComponent,
+    LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MaterialModule,
-    PagesModule,
-    HospitalModule,
-    MatTabsModule,
-    MatStepperModule,
-    MatSelectModule,
-    ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    FormsModule,
-    MatExpansionModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MaterialModule,
+        PagesModule,
+        HospitalModule,
+        MatTabsModule,
+        MatStepperModule,
+        MatSelectModule,
+        ReactiveFormsModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        FormsModule,
+        MatExpansionModule,
+        MatToolbarModule,
+        MatDividerModule,
+        NgToastModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,66 @@
+*{
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+.title{
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 35px;
+}
+.slideInLeft {
+  animation: slideInLeft 0.5s;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.services-card img {
+  width: 50%;
+}
+
+.appointment-card img {
+  width: 50%;
+  height: 50%;
+  margin: 20px;
+  padding-bottom: 10px;
+}
+.welcome-card {
+  text-align: center;
+  width: 100%;
+  background: #282a36;
+  color: #f8f8f2;
+}
+button{
+  font-size: 20px;
+  padding: 10px;
+}
+
+.services-card {
+  margin-top: 20px;
+  text-align: center;
+  background: #282a36;
+  color: #f8f8f2;
+  width: 35%;
+}
+.services-card img{
+  text-align: left;
+}
+.services-card .mat-list .mat-list-item{
+  color: #f8f8f2;
+}
+.appointment-card {
+  text-align: center;
+  background: #282a36;
+  color: #f8f8f2;
+  width: 40%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

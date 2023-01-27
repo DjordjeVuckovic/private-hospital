@@ -3,6 +3,8 @@ package com.teachhealth.hospitalbe.offers;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity(name = "OfferMessage")
 @Table(name = "offer_message")
@@ -17,4 +19,5 @@ public class OfferMessage {
     @Column(name = "id", nullable = false)
     private Long id;
     String message;
+    Date receivedTime;
 }

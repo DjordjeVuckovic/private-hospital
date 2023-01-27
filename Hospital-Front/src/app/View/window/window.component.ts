@@ -5,6 +5,7 @@ import {BloodContract} from "../../Model/BloodContract";
 import {BloodType} from "../../Model/BloodType";
 import {BloodContractService} from "../../Services/bloodContract.service";
 import {NgToastService} from "ng-angular-popup";
+import {LoginService} from "../../Services/login.service";
 
 @Component({
   selector: 'app-window',
@@ -19,17 +20,17 @@ export class WindowComponent implements OnInit {
   bloodUnits : BloodUnit[] = []
   currentContract:BloodContract = new BloodContract();
 
-  constructor( private bloodContractService:BloodContractService,private alert: NgToastService) { }
+  constructor( private bloodContractService:BloodContractService,private alert: NgToastService,private loginService:LoginService ) { }
 
   submit() {
-    var bloodContract: BloodContract = new BloodContract();
+    const bloodContract: BloodContract = new BloodContract();
     bloodContract.bloodUnits = this.bloodUnits
     bloodContract.deliveryDate = this.transportDate;
+    bloodContract.hospitalName = this.loginService.getToken()!
     console.log(bloodContract)
     this.bloodContractService.createRequest(bloodContract).subscribe({
       next:res=>{
-        console.log("gsdsgsdgsdgsdgsdgf")
-        this.alert.success({detail: 'Sucsses!', summary: "You have made a blood contract request.", duration: 5000})
+        this.alert.success({detail: 'Success!', summary: "You have made a blood contract request.", duration: 5000})
       },
       error:err=>{
         this.alert.error({detail: 'Error!', summary: err, duration: 5000})
@@ -80,23 +81,39 @@ export class WindowComponent implements OnInit {
     }
   }
 
-  blbla(num:string,type: string|undefined) {
-
-    var bloodUnit = new BloodUnit();
+  convertBloodType
+  (num:string,type: string|undefined) {
+    console.log(type)
+    const bloodUnit = new BloodUnit();
     // @ts-ignore
-    bloodUnit.bloodType = this.setVloodType(type)
+    let typeConvert = this.setVloodType(type)
+    console.log(typeConvert)
+    let same = false;
+    this.bloodUnits.forEach(value => {
+      console.log(value.bloodType)
+      if(value.bloodType == typeConvert){
+        value.bloodAmount = Number(num)
+        same = true
+      }
+    })
+    if(same){
+      return
+    }
+    bloodUnit.bloodType = typeConvert
     bloodUnit.bloodAmount= Number(num)
-
     this.bloodUnits.push(bloodUnit)
     console.log(this.bloodUnits)
   }
 
   ngOnInit(): void {
-    this.bloodContractService.getCurrentContract().subscribe({
+    this.bloodContractService.getCurrentContract(this.loginService.getToken()!).subscribe({
       next: res=>{
         this.currentContract = res;
         console.log(this.currentContract)
-      }
+      },
+      error: err =>{
+        this.alert.warning({detail: 'Error!', summary: "No contact provided!", duration: 5000})
+     }
     })
   }
 

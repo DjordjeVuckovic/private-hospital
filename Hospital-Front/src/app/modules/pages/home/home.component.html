@@ -1,1 +1,50 @@
-<p>home works!</p>
+<div class="container">
+<div class="animated fadeIn">
+  <mat-card class="welcome-card">
+    <mat-card-header>
+      <mat-card-title class="title">Welcome to Our Hospital</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="animated slideInLeft">
+        <img src="assets/hospital-building1.png" alt="Hospital building">
+      </div>
+      <p>We are here to provide you with the best medical care possible.</p>
+      <p>Our team of experienced doctors and nurses are dedicated to your health and well-being.</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="animated fadeIn">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+      <mat-card class="services-card">
+        <mat-card-header>
+          <mat-card-title>Our Services</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="animated slideInLeft">
+            <img src="assets/medical-history.png" alt="Medical services">
+          </div>
+          <mat-list>
+            <mat-list-item>General Medicine</mat-list-item>
+            <mat-list-item>Surgery</mat-list-item>
+            <mat-list-item>Pediatrics</mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="appointment-card">
+        <mat-card-header>
+          <mat-card-title>Book an Appointment</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="animated slideInLeft">
+            <img src="assets/calendar.png" alt="Calendar">
+          </div>
+          <button mat-raised-button color="primary" (click)="bookAppointment()">Book Now</button>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+</div>

@@ -1,3 +1,13 @@
 <router-outlet>
-  <app-window></app-window>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/contract">Contract</a>
+      <a mat-button routerLink="/offers">Offers</a>
+      <span class="example-spacer"></span>
+      <a mat-button routerLink="/">Login</a>
+      <a mat-button (click)="signOut()">Sign out</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <lib-ng-toast></lib-ng-toast>
 </router-outlet>

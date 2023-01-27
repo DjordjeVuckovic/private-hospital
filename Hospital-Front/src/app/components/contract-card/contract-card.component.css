@@ -1,8 +1,19 @@
 .card{
-  background-color: #e3ba99;
+  background-color: #282a36;
+  color: #DCD6CC;
   border-radius: 15px;
-  padding: 15%;
-  margin: 15%;
-  width: 150%;
+  padding: 10%;
+  margin: 5%;
+  width: 120%;
   height: 100%;
+  text-align: center;
+  box-shadow: #282a36;
+  font-size: 20px;
+}
+.display{
+  display: block;
+  margin-top: 10px;
+}
+.card:hover{
+  transform: scale(1.5);
 }

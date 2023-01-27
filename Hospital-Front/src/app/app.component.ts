@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import {FormControl} from "@angular/forms";
-import {BloodUnit, BloodUnitString} from "./Model/BloodUnit";
-import {BloodType} from "./Model/BloodType";
-import {BloodContract} from "./Model/BloodContract";
+import {Router} from "@angular/router";
+import {LoginService} from "./Services/login.service";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +9,10 @@ import {BloodContract} from "./Model/BloodContract";
 })
 export class AppComponent {
 
-
-
+  constructor(private rt:Router,private loginService:LoginService) {
+  }
+  signOut() {
+    this.loginService.signOut()
+    this.rt.navigate([''])
+  }
 }
