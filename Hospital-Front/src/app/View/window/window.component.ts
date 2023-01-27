@@ -17,6 +17,7 @@ export class WindowComponent implements OnInit {
   transportDate: Date | undefined;
   bloodTypes = new FormControl('');
   bloodUnits : BloodUnit[] = []
+  currentContract:BloodContract = new BloodContract();
 
   constructor( private bloodContractService:BloodContractService,private alert: NgToastService) { }
 
@@ -91,6 +92,12 @@ export class WindowComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.bloodContractService.getCurrentContract().subscribe({
+      next: res=>{
+        this.currentContract = res;
+        console.log(this.currentContract)
+      }
+    })
   }
 
 }

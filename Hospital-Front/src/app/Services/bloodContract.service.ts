@@ -16,4 +16,9 @@ export class BloodContractService {
   createRequest(request:BloodContract): Observable<BloodContract> {
     return this.httpClient.post<BloodContract>(this.apiHost,request,{headers: this.headers});
   }
+
+
+  getCurrentContract(): Observable<BloodContract> {
+  return this.httpClient.get<BloodContract>(this.apiHost);
+}
 }

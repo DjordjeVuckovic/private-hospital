@@ -1,1 +1,9 @@
-<p>contract-card works!</p>
+<div class="card">
+  <div> {{ bloodContract.deliveryDate | date: 'EEE, MMM d, y' }}</div>
+  <div *ngFor="let unit of bloodContract.bloodUnits">
+    <div>{{unit.bloodType}}</div>
+    <div>{{unit.bloodAmount}}</div>
+  </div>
+
+</div>
+

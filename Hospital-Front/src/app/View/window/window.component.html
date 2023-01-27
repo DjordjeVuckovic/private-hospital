@@ -55,7 +55,7 @@
             </mat-step>
             <mat-step>
               <ng-template matStepLabel>Select date of arrival</ng-template>
-              <div class="tab">
+              <div class="tab" >
                 <mat-form-field appearance="fill">
                   <mat-label>Choose a date</mat-label>
                   <input matInput [matDatepicker]="picker" [(ngModel)]="transportDate">
@@ -72,8 +72,8 @@
         </mat-tab>
 
         <mat-tab  label="Your contract">
-          <div class="tab">
-            <app-contract-card></app-contract-card>
+          <div class="tab" style="margin-bottom: 10%">
+            <app-contract-card [bloodContract]="currentContract"></app-contract-card>
           </div>
         </mat-tab>
         <mat-tab class="tab" label="Info"> Info </mat-tab>
