@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class BloodContractService {
-  apiHost: string = 'localhost:5432/privateHospital/api/v1/blood-contract';
+  apiHost: string = 'http://localhost:8081/api/v1/blood-contract';
   headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private readonly httpClient: HttpClient) {
