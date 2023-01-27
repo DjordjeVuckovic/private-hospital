@@ -33,12 +33,24 @@
                 </div>
               </div>
               <div *ngIf="hasValues()" class="tab">
-                <div  *ngFor=" let type of bloodTypes.value" class="quantity" >
-                  <mat-form-field class="example-full-width ">
-                    <mat-label>{{type}}</mat-label>
-                    <input #inputRef type="number" matInput placeholder="Ex. Pizza" (input)="blbla(inputRef.value,type)">
-                  </mat-form-field>
-                </div>
+                <mat-accordion class="example-headers-align" multi>
+                  <mat-expansion-panel *ngFor=" let type of bloodTypes.value">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        Amount of blood type: {{type}}
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-form-field appearance="fill">
+                      <input #inputRef type="number" matInput placeholder="Ex. Pizza" (input)="blbla(inputRef.value,type)">
+                    </mat-form-field>
+                  </mat-expansion-panel>
+                </mat-accordion>
+<!--                <div  *ngFor=" let type of bloodTypes.value" class="quantity" >-->
+<!--                  <mat-form-field class="example-full-width ">-->
+<!--                    <mat-label>{{type}}</mat-label>-->
+<!--                    <input #inputRef type="number" matInput placeholder="Ex. Pizza" (input)="blbla(inputRef.value,type)">-->
+<!--                  </mat-form-field>-->
+<!--                </div>-->
               </div>
             </mat-step>
             <mat-step>
@@ -59,12 +71,9 @@
           </mat-stepper>
         </mat-tab>
 
-        <mat-tab  label="See offers">
+        <mat-tab  label="Your contract">
           <div class="tab">
-            <mat-form-field class="example-full-width">
-              <mat-label>Favorite food</mat-label>
-              <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field>
+            <app-contract-card></app-contract-card>
           </div>
         </mat-tab>
         <mat-tab class="tab" label="Info"> Info </mat-tab>

@@ -10,7 +10,7 @@ public class CorsPolicyBean implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:4202","http://localhost:8080")
+                .allowedOrigins("http://localhost:4202","http://localhost:8080","http://localhost:4205")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD");
     }
 }
