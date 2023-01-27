@@ -14,11 +14,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from '@angular/material/core';
 import { WindowComponent } from './view/window/window.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import { ContractCardComponent } from './components/contract-card/contract-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WindowComponent
+    WindowComponent,
+    ContractCardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { WindowComponent } from './view/window/window.component';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

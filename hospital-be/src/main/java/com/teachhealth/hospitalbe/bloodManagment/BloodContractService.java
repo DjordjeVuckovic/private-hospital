@@ -6,6 +6,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -13,6 +15,13 @@ public class BloodContractService {
     private final BloodContractRepository bloodContractRepository;
     private final BloodUnitRepository bloodUnitRepository;
     private final RabbitTemplate rabbitTemplate;
+
+
+    public BloodContract getCurrentContract( ) throws Exception {
+        return bloodContractRepository
+                .getCurrentContract("Best Hospital")
+                .orElseThrow(() -> new Exception("No contracts"));
+    }
     @Transactional
     public void createContract(BloodContractDto contractDto){
         var contract = bloodContractRepository

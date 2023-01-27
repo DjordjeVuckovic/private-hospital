@@ -16,4 +16,11 @@ public class BloodContactController {
         bloodContractService.createContract(contractDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @GetMapping()
+    public  ResponseEntity<BloodContract> getCurrentontract() throws Exception {
+        BloodContract contract = bloodContractService.getCurrentContract();
+        return ResponseEntity.ok(contract);
+    }
+
 }

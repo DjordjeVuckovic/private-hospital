@@ -27,6 +27,7 @@ export class WindowComponent implements OnInit {
     console.log(bloodContract)
     this.bloodContractService.createRequest(bloodContract).subscribe({
       next:res=>{
+        console.log("gsdsgsdgsdgsdgsdgf")
         this.alert.success({detail: 'Sucsses!', summary: "You have made a blood contract request.", duration: 5000})
       },
       error:err=>{
@@ -36,6 +37,13 @@ export class WindowComponent implements OnInit {
   }
 
   hasValues() {
+    // if(this.bloodTypes.value){
+    //   // @ts-ignore
+    //   if(this.bloodTypes.value.){
+    //     return false
+    //   }
+    //
+    // }
     return this.bloodTypes.value;
 
   }
