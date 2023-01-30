@@ -1,10 +1,10 @@
 # **Private Hospital System**
 Full stack hospital project. A web application for managing hospital operations.Mainly used for integration with blood bank application.
 ## Blood bank application
-The blood bank app t can be found at the following repository: https://github.com/DjordjeVuckovic/blood-bank
+The blood bank app can be found at the following repository: https://github.com/DjordjeVuckovic/blood-bank
 ## Features
-- New contract with blood banks
-- Preview of all offer from blood banks
+- New contract with blood bank
+- All offers from blood banks preview
 - Login as private hospital
 ## Technologies
 - Angular
