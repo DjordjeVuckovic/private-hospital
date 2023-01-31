@@ -16,6 +16,7 @@ The blood bank app can be found at the following repository: https://github.com/
 - Node.js
 - Angular CLI
 - PosgtresSQL server
+- RabbitMQ server
 
 ## Starting the Application
 To start the Spring Boot application, make sure you have a Postgres database bloodbank ready. In the application properties set up username and password for your postres user (you can make a new one or use the default user posgtres). After starting the application, it will be available on   port 8081. The Spring boot application is using Swagger so application url is http://localhost:8081/swagger-ui/index.html.
